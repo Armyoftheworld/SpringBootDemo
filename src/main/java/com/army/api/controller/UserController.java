@@ -5,10 +5,7 @@ import com.army.api.response.Response;
 import com.army.api.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -25,7 +22,7 @@ public class UserController {
         return userService.addUser(user);
     }
 
-    @ApiOperation(value = "查询用户")
+   @ApiOperation(value = "查询用户")
     @RequestMapping(path = "/users", produces = "application/json;charset=utf-8", method = RequestMethod.POST)
     public Response queryUsers() {
         return userService.queryUsers();
